@@ -8,18 +8,9 @@ angular.module('InstagramSearcher')
       $scope.queryInstagram($scope.searchText)
     };
 
-//inject $http
-//set config for jsonp
-//define params obj
-
     $scope.queryInstagram = function(searchText) {
         var url = "https://api.instagram.com/v1/tags/" + searchText + "/media/recent";
         var request = {
-            // apikey: "XXXXXXXXXXXXXXX--GET-YOUR-OWN-KEY!",
-            // text: text,
-            // outputMode: 'json',
-            // showSourceText: '1',
-            // jsonp: "JSON_CALLBACK"
             callback: 'JSON_CALLBACK',
             client_id: 'bdcdb652f29346fab8a242c89c201439'
         };
@@ -31,7 +22,7 @@ angular.module('InstagramSearcher')
         })
         .success(function(result) {
           console.log(result);
-            // $scope.analysis = result;
+          $scope.searchResults = result;
         })
         .error(function() {
             alert('error');

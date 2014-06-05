@@ -17,6 +17,9 @@
       <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{serachText}}"</p>
       <p ng-show='searchCompleted'>We found {{numberOfResults}} for "{{searchText}}"</p>
     </div>
+    <div class='row'>
+      <img ng-repeat='obj in searchResults.data' ng-src='{{obj.images.low_resolution.url}}'>
+    </div>
   </div>
   <script src='bower_components/angular/angular.js'></script>
   <script src='bower_components/angular-animate/angular-animate.js'></script>
