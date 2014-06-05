@@ -1,17 +1,17 @@
-<html ng-app='MyApp'>
+<html ng-app='InstagramSearcher'>
 <head>
-  <title>MyApp</title>
+  <title>Instagram Searcher</title>
   <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
-<body>
+<body ng-controller='searchController'>
   <div class='mainContainer text-center'>
     <div class='row '>
       <img src="./img/ng-instagram.png">
     </div> <br>
     <div class='row'>
       <input class='' ng-model='searchText' placeholder='Enter a tag to search...'>
-      <button ng-click=''>Submit</button>
+      <button ng-click='submitClicked()'>Submit</button>
     </div> <br>
     <div class='row'>
       <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{serachText}}"</p>
