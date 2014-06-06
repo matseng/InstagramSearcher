@@ -14,8 +14,8 @@
       <button ng-click='submitClicked()'>Submit</button>
     </div> <br>
     <div class='row'>
-      <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{serachText}}"</p>
-      <p ng-show='searchCompleted'>We found {{numberOfResults}} for "{{searchText}}"</p>
+      <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchText}}"</p>
+      <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchText}} ({{elapsedTime}} secs)</p>
     </div>
     <div class='row'>
       <img ng-repeat='obj in searchResults.data' ng-src='{{obj.images.low_resolution.url}}'>
