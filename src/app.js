@@ -6,8 +6,10 @@ angular.module('InstagramSearcher')
       $scope.searchInProgress = true;
       timer.setStartTime();
       $scope.searchText = $scope.searchText || 'cats';
-      console.log($scope.searchText);
-      $scope.queryInstagram($scope.searchText)
+      $scope.searchTextCopy = angular.copy($scope.searchText);
+      $scope.queryInstagram($scope.searchTextCopy);
+      $scope.searchText = "";
+
     };
 
     var timer = {

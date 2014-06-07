@@ -17,8 +17,8 @@
     </div> <br>
     <div class='row'>
       <span ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</span>
-      <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchText}}"</p>
-      <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchText}}" ({{elapsedTime}} secs)</p>
+      <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchTextCopy}}"</p>
+      <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchTextCopy}}" ({{elapsedTime}} secs)</p>
     </div>
     <div class='row'>
       <img class='instagramImage animate-repeat' ng-repeat='obj in searchResults.data' ng-src='{{obj.images.low_resolution.url}}'>
