@@ -1,4 +1,4 @@
-angular.module('InstagramSearcher', []);
+angular.module('InstagramSearcher', ['ngAnimate']);
 
 angular.module('InstagramSearcher')
   .controller('searchController', ['$scope', '$http', function($scope, $http) {
