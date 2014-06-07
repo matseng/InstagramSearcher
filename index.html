@@ -10,12 +10,13 @@
       <img src="./img/ng-instagram.png">
     </div> <br>
     <div class='row'>
-      <form ng-submit='submitClicked()'>
-        <input class='' ng-model='searchText' placeholder='Enter a tag to search...'>
-        <input type='submit' value='Search'>
+      <form name='searchForm' ng-submit='submitClicked()' novalidate>
+        <input type='text' name='text' class='' ng-model='searchText' ng-pattern='wordRegEx' placeholder='Enter a tag to search...' required>
+        <input class='btn btn-primary' type='submit' ng-disabled='!searchForm.text.$valid' value='Search'>
       </form>
     </div> <br>
     <div class='row'>
+      <span ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</span>
       <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchText}}"</p>
       <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchText}}" ({{elapsedTime}} secs)</p>
     </div>

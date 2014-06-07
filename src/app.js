@@ -26,6 +26,8 @@ angular.module('InstagramSearcher')
       }
     }
 
+    $scope.wordRegEx = /^\s*\w*\s*$/;
+
     $scope.queryInstagram = function(searchText) {
         var url = "https://api.instagram.com/v1/tags/" + searchText + "/media/recent";
         var request = {
@@ -39,7 +41,7 @@ angular.module('InstagramSearcher')
             params: request
         })
         .success(function(result) {
-          // $scope.searchInProgress = false;
+          $scope.searchInProgress = false;
           $scope.searchCompleted = true;
           timer.setEndTime();
           $scope.elapsedTime = timer.getElapsedTime() / 1000;
@@ -48,8 +50,8 @@ angular.module('InstagramSearcher')
           $scope.searchResults = result;
           $scope.numberOfResults = result.data.length;
         })
-        .error(function() {
-            alert('error');
+        .error(function(error) {
+            alert("Instagrams's API wasn't happy! Result: " + error);
         })
     };
 
