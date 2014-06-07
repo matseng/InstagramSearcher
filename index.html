@@ -21,16 +21,6 @@
       <img class='instagramImage animate-repeat' ng-repeat='obj in searchResults.data' ng-src='{{obj.images.low_resolution.url}}'>
     </div>
   </div>
-
-  <div ng-init="checked=true">
-    <label>
-      <input type="checkbox" ng-model="checked" style="float:left; margin-right:10px;"> Is Visible...
-    </label>
-    <div class="check-element sample-show-hide" ng-show="checked" style="clear:both;">
-      Visible...
-    </div>
-  </div>
-
   <script src='bower_components/angular/angular.js'></script>
   <script src='bower_components/angular-animate/angular-animate.js'></script>
   <script src='src/app.js'></script>
