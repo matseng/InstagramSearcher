@@ -10,8 +10,10 @@
       <img src="./img/ng-instagram.png">
     </div> <br>
     <div class='row'>
-      <input class='' ng-model='searchText' placeholder='Enter a tag to search...'>
-      <button ng-click='submitClicked()'>Submit</button>
+      <form ng-submit='submitClicked()'>
+        <input class='' ng-model='searchText' placeholder='Enter a tag to search...'>
+        <input type='submit' value='Search'>
+      </form>
     </div> <br>
     <div class='row'>
       <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchText}}"</p>
