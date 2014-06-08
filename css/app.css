@@ -2,10 +2,11 @@
 }
 
 .animate-repeat {
-  -webkit-transition: all linear 1.5s;
-  transition: all linear 1.5s;
+  -webkit-transition: all linear 2.5s;
+  transition: all linear 2.5s;
 }
 
+/*ng-enter gets added as a class with an element is added to the DOM*/
 .animate-repeat.ng-enter {
   opacity: 0;
 }

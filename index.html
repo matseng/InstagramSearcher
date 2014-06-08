@@ -21,7 +21,9 @@
       <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchTextCopy}}" ({{elapsedTime}} secs)</p>
     </div>
     <div class='row'>
-      <img class='instagramImage animate-repeat' ng-repeat='obj in searchResults.data' ng-src='{{obj.images.low_resolution.url}}'>
+      <a class='animate-repeat' ng-repeat='obj in searchResults.data' href="{{obj.link}}" target="_blank">
+        <img class='instagramImage' ng-src='{{obj.images.low_resolution.url}}'>
+      </a>
     </div>
   </div>
   <script src='bower_components/angular/angular.js'></script>
