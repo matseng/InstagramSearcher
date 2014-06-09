@@ -4,30 +4,34 @@
   <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
-<body ng-controller='searchController'>
-  <div class='mainContainer text-center'>
-    <div class='row '>
-      <img src="./img/ng-instagram.png">
-    </div> <br>
-    <div class='row'>
-      <form name='searchForm' ng-submit='submitClicked()' novalidate>
-        <input type='text' name='text' class='' ng-model='searchText' ng-pattern='wordRegEx' placeholder='Enter a tag to search...' required>
-        <input class='btn btn-primary' type='submit' ng-disabled='!searchForm.text.$valid' value='Search'>
-      </form>
-    </div> <br>
-    <div class='row'>
-      <span ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</span>
-      <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchTextCopy}}"</p>
-      <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchTextCopy}}" ({{elapsedTime}} secs)</p>
+  <body ng-controller='searchController'>
+    <div class='mainContainer text-center'>
+      <div class='row '>
+        <img src="./img/ng-instagram.png">
+      </div> <br>
+      <div class='row'>
+        <form name='searchForm' ng-submit='submitClicked()' novalidate>
+          <input type='text' name='text' class='' ng-model='searchText' ng-pattern='wordRegEx' placeholder='Enter a tag to search...' required>
+          <input class='btn btn-primary' type='submit' ng-disabled='!searchForm.text.$valid' value='Search'>
+        </form>
+      </div> <br>
+      <div class='row'>
+
+        <!-- <div class='fadein fadeout' ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</div> -->
+        <div class='show-animate' ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</div>
+        <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchTextCopy}}"</p>
+        <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchTextCopy}}" ({{elapsedTime}} secs)</p>
+      </div>
+      <div class='row'>
+  <!--       TODO: -Keyframe animation to have images pop up ASOTV style
+          -Staggered pop ups (ie popups have 1 after another) -->
+        <a class='animate-repeat' ng-repeat='obj in searchResults.data' href="{{obj.link}}" target="_blank">
+          <img class='instagramImage' ng-src='{{obj.images.low_resolution.url}}'>
+        </a>
+      </div>
     </div>
-    <div class='row'>
-      <a class='animate-repeat' ng-repeat='obj in searchResults.data' href="{{obj.link}}" target="_blank">
-        <img class='instagramImage' ng-src='{{obj.images.low_resolution.url}}'>
-      </a>
-    </div>
-  </div>
-  <script src='bower_components/angular/angular.js'></script>
-  <script src='bower_components/angular-animate/angular-animate.js'></script>
-  <script src='src/app.js'></script>
-</body>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src='bower_components/angular-animate/angular-animate.js'></script>
+    <script src='src/app.js'></script>
+  </body>
 </html>
