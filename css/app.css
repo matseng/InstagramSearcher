@@ -14,7 +14,23 @@
 
 .hidden-animate-add,
 .hidden-animate-remove {
-  /*display:block!important;*/
+  display:block!important;
+  -webkit-transition:all linear .5s;
+  transition:all linear .5s;
+}
+
+.hidden-animate-slowFadeOut {
+  opacity: 0;
+  transform: scaleY(0);}
+
+.hidden-animate-slowFadeOut-add {
+  display:block!important;
+  -webkit-transition:all linear 3s;
+  transition:all linear 3s;
+}
+
+.hidden-animate-slowFadeOut-remove {
+  display:block!important;
   -webkit-transition:all linear .5s;
   transition:all linear .5s;
 }
