@@ -16,8 +16,13 @@
         </form>
       </div>
       <div class='row'>
-        <span ng-class="{'hidden-animate': !searchForm.text.$error.pattern}">Please enter a valid, single word</span>
-        <p class='searchStatus' ng-class="{'hidden-animate': !searchInProgress}">Searching Instagram for photos tagged with "{{searchTextCopy}}"</p>
+        <div class="position-absolute">
+          <span ng-class="{'hidden-animate': !searchForm.text.$error.pattern}">Please enter a valid, single word</span>
+        </div>
+        <div class="position-absolute">
+          <p ng-class="{'hidden-animate': !searchInProgress}">Searching Instagram for photos tagged with "{{searchTextCopy}}"</p>
+        </div> 
+        <br>
         <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchTextCopy}}" ({{elapsedTime}} secs)</p>
       </div>
       <div class='row'>
