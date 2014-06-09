@@ -1,10 +1,6 @@
 .instagramImage {
 }
 
-.animate-repeat {
-  -webkit-transition: all linear 2.5s;
-  transition: all linear 2.5s;
-}
 
 .show-animate {
 }
@@ -22,6 +18,10 @@
   opacity: 0;
 }
 
+.animate-repeat {
+  -webkit-transition: all linear 2.5s;
+  transition: all linear 2.5s;
+}
 /*ng-enter gets added as a class with an element is added to the DOM via ng-repeat*/
 .animate-repeat.ng-enter {
   opacity: 0;
@@ -29,4 +29,14 @@
 
 .animate-repeat.ng-enter.ng-enter-active {
   opacity: 1;
+}
+
+.popup.ng-enter {
+  -webkit-animation:1.25s popup-keyframes;
+  /*animation:0.5s red-to-blue;*/
+}
+
+@-webkit-keyframes popup-keyframes {
+  from { -webkit-transform: scale(0); }
+  to { -webkit-transform: scale(1); }
 }
