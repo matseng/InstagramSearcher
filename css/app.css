@@ -19,8 +19,8 @@
 }
 
 .animate-repeat {
-  -webkit-transition: all linear 2.5s;
-  transition: all linear 2.5s;
+  -webkit-transition: all linear .5s;
+  transition: all linear .5s;
 }
 /*ng-enter gets added as a class with an element is added to the DOM via ng-repeat*/
 .animate-repeat.ng-enter {
@@ -32,11 +32,15 @@
 }
 
 .popup.ng-enter {
-  -webkit-animation:1.25s popup-keyframes;
+  -webkit-animation:.5s popup-keyframes;
   /*animation:0.5s red-to-blue;*/
 }
 
 @-webkit-keyframes popup-keyframes {
-  from { -webkit-transform: scale(0); }
-  to { -webkit-transform: scale(1); }
+  /*from { -webkit-transform: scale(0); }*/
+  /*to { -webkit-transform: scale(1); }*/
+  0% { -webkit-transform: scale(0); }
+  90% { -webkit-transform: scale(1.05); }
+  100% { -webkit-transform: scale(1); }
+
 }
