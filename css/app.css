@@ -1,6 +1,11 @@
 .instagramImage {
 }
 
+.searchStatus {
+  position: relative;
+  top: -1em;
+}
+
 .hidden-animate {
   opacity: 0;
   -webkit-transform: scaleY(0);
@@ -9,8 +14,8 @@
 .hidden-animate-add,
 .hidden-animate-remove {
   display:block!important;
-  -webkit-transition:all linear .25s;
-  transition:all linear .25s;
+  -webkit-transition:all linear .5s;
+  transition:all linear .5s;
 }
 
 .animate-repeat {
