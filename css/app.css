@@ -1,21 +1,16 @@
 .instagramImage {
 }
 
+.hidden-animate {
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);}
 
-.show-animate {
-}
-
-.show-animate.ng-hide-add,
-.show-animate.ng-hide-remove {
+.hidden-animate-add,
+.hidden-animate-remove {
   display:block!important;
   -webkit-transition:all linear .25s;
   transition:all linear .25s;
-}
-
-.show-animate.ng-hide {
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  opacity: 0;
 }
 
 .animate-repeat {
@@ -33,7 +28,6 @@
 
 .popup.ng-enter {
   -webkit-animation:.5s popup-keyframes;
-  /*animation:0.5s red-to-blue;*/
 }
 
 @-webkit-keyframes popup-keyframes {

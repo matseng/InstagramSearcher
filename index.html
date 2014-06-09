@@ -14,17 +14,14 @@
           <input type='text' name='text' class='' ng-model='searchText' ng-pattern='wordRegEx' placeholder='Enter a tag to search...' required>
           <input class='btn btn-primary' type='submit' ng-disabled='!searchForm.text.$valid' value='Search'>
         </form>
-      </div> <br>
+      </div>
       <div class='row'>
-
-        <!-- <div class='fadein fadeout' ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</div> -->
-        <div class='show-animate' ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</div>
+        <!-- <div class='show-animate' ng-show="searchForm.text.$error.pattern">Please enter a valid, single word</div> -->
+        <span ng-class="{'hidden-animate': !searchForm.text.$error.pattern}">Please enter a valid, single word</span>
         <p ng-show='searchInProgress'>Searching Instagram for photos tagged with "{{searchTextCopy}}"</p>
         <p ng-show='searchCompleted'>We found {{numberOfResults}} results for "{{searchTextCopy}}" ({{elapsedTime}} secs)</p>
       </div>
       <div class='row'>
-  <!--       TODO: -Keyframe animation to have images pop up ASOTV style
-          -Staggered pop ups (ie popups have 1 after another) -->
         <a class='animate-repeat popup' ng-repeat='obj in searchResults.data' href="{{obj.link}}" target="_blank">
           <img class='instagramImage' ng-src='{{obj.images.low_resolution.url}}'>
         </a>
